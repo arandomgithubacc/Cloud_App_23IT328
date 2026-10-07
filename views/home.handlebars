@@ -1,0 +1,22 @@
+<h2>Quản Lý Sách (MSSV: 23IT328)</h2>
+
+<form action="/add-book" method="POST">
+    <input type="text" name="bookCode" placeholder="Mã sách (Ví dụ: 328001)" required>
+    <input type="text" name="title" placeholder="Tên sách" required>
+    <input type="number" name="basePrice" placeholder="Giá gốc" required>
+    <button type="submit">Thêm Sách</button>
+</form>
+
+<hr>
+
+<h3>Danh Sách Sách Trong CSDL</h3>
+<ul>
+    {{#each books}}
+        <li>Mã: <strong>{{this.bookCode}}</strong> | Tên: {{this.title}} | Giá gốc: {{this.basePrice}} | <strong>Giá sau thuế: {{this.finalPrice}}</strong></li>
+    {{/each}}
+</ul>
+
+<footer>
+    <hr>
+    <p><strong>Họ tên sinh viên:</strong> {{studentInfo.fullName}} | <strong>MSSV:</strong> {{studentInfo.mssv}} | <strong>Mức VAT áp dụng:</strong> {{studentInfo.vatPercent}}%</p>
+</footer>
